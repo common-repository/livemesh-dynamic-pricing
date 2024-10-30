@@ -1,0 +1,213 @@
+@import '../../includes/libraries/lwc-conditions/assets/css/lwc-conditions';
+
+/* Hide 'visibility' from admin */
+.post-type-dynamic_pricing .misc-pub-visibility#visibility {
+	display: none;
+}
+
+
+.post-type-product .lwc-conditions {
+	.lwc-condition-wrap {
+		.lwc-value-field-wrap input { float: none; display: inline-block; }
+		.lwc-condition { width: 35% !important; }
+		.lwc-operator { width: 22.5% !important; }
+		.lwc-value { width: calc( 42.5% - 75px ) !important; min-width: 0; }
+	}
+	.lwc-condition-group { margin: 0 -20px 1.5em -14px; }
+}
+
+.post-type-product .ldp-dynamic-pricing-condition {
+	input { min-width: 0 !important; padding: 0 8px !important; }
+}
+.post-type-dynamic_pricing, .post-type-product {
+	div#tiptip_content td ~ td {
+		text-align: left;
+		float: left;
+		padding-left: 15px;
+	}
+
+	div#tiptip_content tr > td {
+		text-align: right;
+	}
+}
+
+/******************************
+ * Settings meta box
+ ******************************/
+#ldp-settings {
+
+	.ldp-option label {
+		display: inline-block;
+		width: 150px;
+	}
+	.description {
+		vertical-align: middle;
+		display: inline-block;
+	}
+
+	/* Bulk pricing */
+	.head {
+		margin-bottom: 5px;
+		max-width: 922px;
+	}
+	.ldp-bulk-row {
+		margin-bottom: 5px;
+		max-width: 960px;
+	}
+	.head, .ldp-bulk-row {
+		display: flex;
+		flex-flow: row nowrap;
+		gap: 10px;
+	}
+	.ldp-bulk-price-wrap input {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 0 6px;
+		margin: 0;
+	}
+	.ldp-bulk-row .ldp-bulk-row-field,
+	.ldp-bulk-row-heading {
+		width: 25%;
+	}
+	.ldp-bulk-row select {
+		width: 100%;
+	}
+	.ldp-bulk-row .description {
+		float: right;
+	}
+	.ldp-bulk-row-add {
+		margin-top: 0.5em;
+
+		&:before {
+			font-family: 'dashicons';
+			content: "\f502";
+			vertical-align: middle;
+			height: 1.2em;
+			line-height: 1;
+			display: inline-block;
+			margin-right: 5px;
+			color: #667;
+		}
+	}
+	.ldp-bulk-row-delete {
+		opacity: 0;
+		transition: opacity .2s ease-in-out;
+		box-sizing: content-box;
+	}
+	.ldp-bulk-row:hover .ldp-bulk-row-delete {
+		opacity: 1;
+	}
+
+	.ldp-simple-adjustment {
+		display: flex;
+		flex-flow: row nowrap;;
+		gap: 10px;
+	}
+}
+
+
+/******************************
+ * Product tab
+ ******************************/
+#ldp_dynamic_pricing_data {
+
+	.ldp-add-dynamic-pricing-button {
+		float: right;
+		margin: 0 0 0 6px;
+	}
+	.ldp-add-dynamic-pricing {
+		float: right;
+		margin: 0 0 0 6px;
+	}
+	.toolbar-add label {
+		float: right;
+		line-height: 30px;
+	}
+
+	.ldp-dynamic-pricing-title-wrap {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+
+		.ldp-dynamic-pricing-name {
+			font-weight: bold;
+			flex: 1 1 auto;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		.remove_row,
+		.handlediv {
+			justify-self: flex-end;
+			flex-shrink: 0;
+		}
+	}
+	.ldp-dynamic-pricing-title {
+		border-right: 1px solid #EEE;
+		margin-right: 10px;
+		padding-right: 10px;
+	}
+
+
+	.woocommerce-help-tip {
+		height: 30px;
+		line-height: 30px
+	}
+	.woocommerce-help-tip:after {
+		line-height: 30px
+	}
+
+	// Bulk rows
+	.ldp-bulk-row {
+
+		&:hover .ldp-bulk-row-delete {
+			opacity: 1;
+		}
+		.ldp-bulk-row-delete {
+			display: flex;
+			align-items: center;
+			opacity: 0;
+			transition: opacity .2s ease-in-out;
+			padding: 0 5px;
+			margin: 0 0 0 5px;
+		}
+
+		.ldp-bulk-row-field.ldp-bulk-row-amount input {
+			width: calc(100% - 35px) !important;
+		}
+	}
+}
+
+#woocommerce-product-data ul.wc-tabs .pricing_options.active:hover > a:before,
+#woocommerce-product-data ul.wc-tabs .pricing_options > a:before {
+	content: "\f18e";
+}
+
+/***************************************
+ * Custom single pricing settings
+ **************************************/
+
+.lwc-currency-wrap {
+	display: flex;
+
+	.lwc-currency {
+		line-height: 2em;
+		margin: 0 -1px 0 0;
+		padding: 0 10px;
+		font-size: 14px;
+		font-weight: 400;
+		color: #555;
+		background-color: #EEE;
+		border: 1px solid #7e8993;
+		border-radius: 4px 0 0 4px;
+		height: unset !important;
+	}
+	input {
+		flex-grow: 1;
+		line-height: 2em;
+		margin-left: -1px;
+		padding: 0 8px !important;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
